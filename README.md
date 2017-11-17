@@ -10,3 +10,39 @@ by: Jimmy Li
 * Handle more than 1 day.
 * Include other nutrition info (macro/micro nutrients).
 * Ability to track exercise.
+
+### Example State Shape
+```
+{
+  currentDate: '11-18-2017',
+  goal: 1800,
+  calendar: {
+    '11-17-2017': {
+      breakfast: {
+        "chicken": 200,
+        "pizza": 100
+      },
+      lunch: {
+        "salad": 200,
+        "pepsi": 100
+      },
+      dinner: {
+        "ramen": 200,
+        "beer": 150
+      },
+      snacks: {
+        "chips": 100
+      },
+      exercise: {
+        "running": 100,
+        "push ups": 200
+      }
+    },
+    '11-18-2017': {
+      breakfast: ...
+      lunch: ...
+      dinner: ...
+      exercise: ...
+    }
+  }
+}```

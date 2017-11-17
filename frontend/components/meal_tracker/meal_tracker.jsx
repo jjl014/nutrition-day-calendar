@@ -7,7 +7,7 @@ export default class MealTracker extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="meal-tracker">
         <h1>Meal Tracker</h1>
       </div>
     );

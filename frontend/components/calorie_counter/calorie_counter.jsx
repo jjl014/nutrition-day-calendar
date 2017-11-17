@@ -7,7 +7,7 @@ export default class CalorieCounter extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="calorie-counter">
         <h1>Calorie Counter</h1>
       </div>
     );
