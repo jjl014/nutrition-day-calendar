@@ -10,7 +10,7 @@ Within the app directory, type in:
   or
 * `npm install`
 * `webpack -w`
-* `open index.html` or copy full path for index.html and paste into the browser or open index.html from the directory
+* In a new terminal run `open index.html` or copy the full path for index.html and paste it into the browser or open index.html from the directory
 
 ## Challenge Overview
 * Displays a list of foods that the user has eaten in a clear way. Include the calorie count.
