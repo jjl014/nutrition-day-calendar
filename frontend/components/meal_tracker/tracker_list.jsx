@@ -19,9 +19,23 @@ export default class TrackerList extends React.Component {
 
   toggleForm() {
     return () => {
-      this.setState({addNewItem: true}, () => {
-        document.querySelector(`.${this.props.type}`).childNodes[2].childNodes[0].focus();
-      });
+      if (this.state.addNewItem) {
+        this.setState({addNewItem: false});
+        document
+          .querySelector(`.${this.props.type}`)
+          .childNodes[0].childNodes[1].childNodes[0]
+          .classList.remove("rotate");
+      } else {
+        this.setState({addNewItem: true}, () => {
+          document
+            .querySelector(`.${this.props.type}`)
+            .childNodes[0].childNodes[1].childNodes[0]
+            .classList.add("rotate");
+          document
+            .querySelector(`.${this.props.type}`)
+            .childNodes[2].childNodes[0].focus();
+        });
+      }
     };
   }
 

@@ -138,6 +138,10 @@ i.add-btn:hover {
   font-size: 28px;
 }
 
+.rotate {
+  transform: rotate(45deg);
+}
+
 .tracker-list-item {
   border-width: 0 1px 1px 1px;
   border-style: solid;
