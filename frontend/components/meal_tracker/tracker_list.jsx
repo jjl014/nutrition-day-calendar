@@ -20,7 +20,7 @@ export default class TrackerList extends React.Component {
   toggleForm() {
     return () => {
       this.setState({addNewItem: true}, () => {
-        document.getElementById("food").focus();
+        document.querySelector(`.${this.props.type}`).childNodes[2].childNodes[0].focus();
       });
     };
   }
@@ -52,7 +52,7 @@ export default class TrackerList extends React.Component {
       };
       this.props.addFood(newFood);
       this.setState({food: "", calories: ""});
-      document.getElementById("food").focus();
+      document.querySelector(`.${type}`).childNodes[2].childNodes[0].focus();
     };
   }
 
