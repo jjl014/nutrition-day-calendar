@@ -1,4 +1,5 @@
 import React from 'react';
+import GoalCalorieFormContainer from './goal_calorie_form_container';
 
 export default class CalorieCounter extends React.Component {
   constructor(props) {
@@ -23,12 +24,34 @@ export default class CalorieCounter extends React.Component {
       });
     }
     return (
-      <div className="calorie-counter v-box">
-        <div className="h-box">
-          <h2>food: {foodCalories}</h2>
-          <h2>exercise: {exerciseCalories}</h2>
-          <h2>total: {foodCalories - exerciseCalories}</h2>
-        </div>
+      <div className="calorie-counter-wrapper v-box center">
+        {
+          goalCalorie ? (
+            <div className="calorie-counter h-box">
+              <div className="v-box center">
+                <h3>{goalCalorie.toLocaleString()}</h3>
+                <p>Goal</p>
+              </div>
+              <p>-</p>
+              <div className="v-box center">
+                <h3>{foodCalories.toLocaleString()}</h3>
+                <p>Food</p>
+              </div>
+              <p>+</p>
+              <div className="v-box center">
+                <h3>{exerciseCalories.toLocaleString()}</h3>
+                <p>Exercise</p>
+              </div>
+              <p>=</p>
+              <div className="remaining v-box center">
+                <h3>{(goalCalorie - foodCalories + exerciseCalories).toLocaleString()}</h3>
+                <p>Remaining</p>
+              </div>
+            </div>
+          ) : (
+            <GoalCalorieFormContainer />
+          )
+        }
       </div>
     );
   }
