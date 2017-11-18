@@ -6,7 +6,7 @@ const TrackerListItem = ({food, removeFood}) => {
     <li className="tracker-list-item h-box">
       <div className="food-calorie-wrapper h-box">
         <h4>{food.food}</h4>
-        <h4>{food.calories}</h4>
+        <h4>{parseInt(food.calories).toLocaleString()}</h4>
       </div>
       <div className="close-btn-wrapper center">
         <i onClick={removeFood} className="fa fa-times close-btn" aria-hidden="true"></i>

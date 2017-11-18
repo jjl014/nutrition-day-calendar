@@ -19,7 +19,9 @@ export default class TrackerList extends React.Component {
 
   toggleForm() {
     return () => {
-      this.setState({addNewItem: true});
+      this.setState({addNewItem: true}, () => {
+        document.getElementById("food").focus();
+      });
     };
   }
 
@@ -123,14 +125,29 @@ export default class TrackerList extends React.Component {
     };
   }
 
+  calculateMealCalories() {
+    const {list, type} = this.props;
+    if (!list) return 0;
+    let sum = 0;
+    for (let food in list[type]) {
+      sum += parseInt(list[type][food].calories);
+    }
+    return sum;
+  }
+
   render() {
-    const {type, list} = this.props;
+    const {list, type} = this.props;
     let listType = type[0].toUpperCase() + type.slice(1);
     return (
       <div className={`${type} tracker-list`}>
         <div className="section-header h-box">
-          <h2>{listType}</h2>
-          <i onClick={this.toggleForm()} className="fa fa-plus add-btn" aria-hidden="true"></i>
+          <div className="header-calorie h-box">
+            <h2>{listType}</h2>
+            <h2>{this.calculateMealCalories()}</h2>
+          </div>
+          <div className="add-btn-wrapper center">
+            <i onClick={this.toggleForm()} className="fa fa-plus add-btn" aria-hidden="true"></i>
+          </div>
         </div>
         <ul className="food-list">
           {this.renderFoodList()}

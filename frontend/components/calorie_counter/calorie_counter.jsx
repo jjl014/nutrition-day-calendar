@@ -6,6 +6,11 @@ export default class CalorieCounter extends React.Component {
     super(props);
   }
 
+  calculateRemaining(goal, food, exercise) {
+    let sum = goal - food + exercise;
+    return sum > 0 ? sum.toLocaleString() : 0;
+  }
+
   render() {
     const {list, goalCalorie} = this.props;
     let foodCalories = 0;
@@ -44,7 +49,7 @@ export default class CalorieCounter extends React.Component {
               </div>
               <p>=</p>
               <div className="remaining v-box center">
-                <h3>{(goalCalorie - foodCalories + exerciseCalories).toLocaleString()}</h3>
+                <h3>{this.calculateRemaining(goalCalorie, foodCalories, exerciseCalories)}</h3>
                 <p>Remaining</p>
               </div>
             </div>
