@@ -14,6 +14,11 @@ export default class TrackerList extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     if (nextProps.currentDate !== this.props.currentDate) {
       this.setState({addNewItem: false});
+      const trackerLists = Array.from(document.querySelectorAll(`.tracker-list`));
+      trackerLists.forEach(list => {
+        list.childNodes[0].childNodes[1].childNodes[0]
+        .classList.remove("rotate");
+      });
     }
   }
 
@@ -103,10 +108,14 @@ export default class TrackerList extends React.Component {
             value={this.state.calories}></input>
           <div className="food-form-btn-wrapper h-box">
             <div className="form-btn-wrapper center">
-              <i onClick={this.handleSubmit()} className="fa fa-check-circle food-form-btn submit-btn" aria-hidden="true"></i>
+              <i onClick={this.handleSubmit()}
+                className="fa fa-check-circle food-form-btn submit-btn"
+                aria-hidden="true"></i>
             </div>
             <div className="form-btn-wrapper center">
-              <i onClick={this.handleCancel()} className="fa fa-times-circle food-form-btn cancel-btn" aria-hidden="true"></i>
+              <i onClick={this.handleCancel()}
+                className="fa fa-times-circle food-form-btn cancel-btn"
+                aria-hidden="true"></i>
             </div>
             <button onClick={this.handleSubmit()} className="form-submit-btn"></button>
           </div>
@@ -160,7 +169,9 @@ export default class TrackerList extends React.Component {
             <h2>{this.calculateMealCalories()}</h2>
           </div>
           <div className="add-btn-wrapper center">
-            <i onClick={this.toggleForm()} className="fa fa-plus add-btn" aria-hidden="true"></i>
+            <i onClick={this.toggleForm()}
+              className="fa fa-plus add-btn"
+              aria-hidden="true"></i>
           </div>
         </div>
         <ul className="food-list">
