@@ -11,6 +11,12 @@ export default class TrackerList extends React.Component {
     };
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    if (nextProps.currentDate !== this.props.currentDate) {
+      this.setState({addNewItem: false});
+    }
+  }
+
   toggleForm() {
     return () => {
       this.setState({addNewItem: true});
@@ -23,19 +29,37 @@ export default class TrackerList extends React.Component {
     };
   }
 
+  formatFood(food) {
+    const foodParts = food.split(" ").map(word => {
+      return word[0].toUpperCase() + word.slice(1);
+    });
+    return foodParts.join(" ");
+  }
+
   handleSubmit() {
     return (e) => {
       e.preventDefault();
       const {type, currentDate} = this.props;
       const {food, calories} = this.state;
-      if (food.trim() === "" || calories === "") return;
+      if (/(\d+)/.test(food) || food.trim() === "" || calories === "") return;
       const newFood = {
         date: currentDate,
         meal: type,
-        food,
+        food: this.formatFood(food),
         calories
       };
       this.props.addFood(newFood);
+    };
+  }
+
+  handleCancel() {
+    return (e) => {
+      e.preventDefault();
+      this.setState({
+        addNewItem: false,
+        food: "",
+        calories: ""
+      });
     };
   }
 
@@ -48,6 +72,7 @@ export default class TrackerList extends React.Component {
           <label htmlFor="calories">Calories</label>
           <input onChange={this.handleChange("calories")} autoComplete="off" id="calories" type="number"></input>
           <button onClick={this.handleSubmit()}>Add</button>
+          <button onClick={this.handleCancel()}>Cancel</button>
         </form>
       );
     }
@@ -85,7 +110,9 @@ export default class TrackerList extends React.Component {
           <h2>{listType}</h2>
           <i onClick={this.toggleForm()} className="fa fa-plus add-btn" aria-hidden="true"></i>
         </div>
-        {this.renderFoodList()}
+        <ul className="food-list">
+          {this.renderFoodList()}
+        </ul>
         {this.renderFoodForm()}
       </div>
     );

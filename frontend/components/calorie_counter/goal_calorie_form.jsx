@@ -25,7 +25,7 @@ export default class GoalCalorieForm extends React.Component{
   render() {
     return (
       <form className="goal-calorie-form h-box">
-        <h3>Please Enter Your Calorie Goal</h3>
+        <h3>Enter Your Calorie Goal</h3>
         <input onChange={this.handleChange()} type="number"></input>
         <button className="goal-submit-btn" onClick={this.handleSubmit()}>Submit</button>
       </form>

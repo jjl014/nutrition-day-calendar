@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ul {
   padding: 0;
   margin: 0;
 }
@@ -14,6 +14,10 @@ h2 {
 
 h3 {
   font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
 }
 
 p {
@@ -52,7 +56,7 @@ li {
   align-items: center;
   margin: 0 auto;
   min-width: 400px;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
 }
 
@@ -60,6 +64,7 @@ li {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px;
 }
 
 .date-header-btn {
@@ -88,6 +93,12 @@ li {
 }
 
 .tracker-list {
+  margin-bottom: 5px;
+  /*box-shadow: 0 4px 2px -2px grey;*/
+}
+
+.tracker-list:last-of-type {
+  margin-bottom: 50px;
 }
 
 .section-header {
@@ -115,7 +126,19 @@ i.add-btn:hover {
 }
 
 .tracker-list-item {
-  border: solid 1px blue;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  background-color: rgba(0,0,0,0.02);
+  border-color: gray;
+  box-sizing: border-box;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.food-calorie-wrapper {
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 10px;
 }
 
 .new-food-form {
@@ -124,7 +147,7 @@ i.add-btn:hover {
 
 .calorie-counter-wrapper {
   width: 100%;
-  height: 70px;
+  height: 60px;
   box-sizing: border-box;
   padding: 0 5px;
 }
