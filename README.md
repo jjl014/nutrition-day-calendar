@@ -55,6 +55,8 @@ As for the new food form, I decided to use an inline form rather than a modal. T
 
 I also restricted the input fields. The food field will only accept letters and the calories field will only accept numbers. No new item will be added unless both fields are filled out.
 
+I also made sure that the correct input field is focused after the user clicks the add button that brings up the food form. The food input field for the correct section will be focused as well when the user finally adds the item to the list. This allows for a better and smoother experience that flows well for the user when adding multiple foods/exercises to the list.
+
 For the color scheme of the app, I took some inspiration from MyFitnessPal's website and mobile app.
 
 Flexbox was used liberally to space things out and make the UI look intuitive and pretty.
