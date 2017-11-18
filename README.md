@@ -1,6 +1,15 @@
 # Nutrition Day Calendar
 by: Jimmy Li
 
+## Running the App
+* `npm install`
+* `npm start`
+
+  or
+
+* `webpack -w`
+* then copy full path for index.html and paste into the browser
+
 ## Challenge Overview
 * Displays a list of foods that the user has eaten in a clear way. Include the calorie count.
 * Display a calculation of the total nutrition values for the day.
@@ -11,44 +20,40 @@ by: Jimmy Li
 * Include other nutrition info (macro/micro nutrients).
 * Ability to track exercise.
 
-### Example State Shape
-```
-{
-  currentDate: '11-18-2017',
-  goal: 1800,
-  calendar: {
-    '11-17-2017': {
-      breakfast: {
-        "breakfast-1510965519405": {
-          food: "chicken",
-          calories: 200
-        },
-        "breakfast-1231235519405": {
-          food: "pizza",
-          calories: 100
-        }
-      },
-      lunch: {
-        "salad": 200,
-        "pepsi": 100
-      },
-      dinner: {
-        "ramen": 200,
-        "beer": 150
-      },
-      snacks: {
-        "chips": 100
-      },
-      exercise: {
-        "running": 100,
-        "push ups": 200
-      }
-    },
-    '11-18-2017': {
-      breakfast: ...
-      lunch: ...
-      dinner: ...
-      exercise: ...
-    }
-  }
-}```
+## Functionality
+* Navigate through dates
+* Add foods to different meals of the day
+* Calorie counter displayed at the top
+* Add exercises
+* Add/Remove items from the lists
+
+## Component Hierarchy
+* App
+  * Nutrition Day Calendar
+    * Date Header
+    * Calorie Counter
+      * Goal Calorie Form
+    * Meal Tracker
+      * Tracker List
+        * Tracker List Item
+
+## Tools
+* React / ReactDOM
+* Redux / React-Redux
+* Redux Logger
+* Webpack / Webpack Dev Server
+* JavaScript
+* Babel
+
+## Notes
+### Design
+
+
+## Debugging and Testing
+
+## Challenges
+
+
+### Future Directions
+* Make use of a nutrition API to get additional nutrition info
+* Add calendar view

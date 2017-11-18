@@ -85,8 +85,6 @@ export default class TrackerList extends React.Component {
       });
     };
   }
-  // <label htmlFor="food">{this.props.type === "exercise" ? "Exercise" : "Food"}</label>
-  // <label htmlFor="calories">Calories</label>
 
   renderFoodForm () {
     if (this.state.addNewItem) {
@@ -107,23 +105,24 @@ export default class TrackerList extends React.Component {
             type="number"
             value={this.state.calories}></input>
           <div className="food-form-btn-wrapper h-box">
-            <div className="form-btn-wrapper center">
-              <i onClick={this.handleSubmit()}
-                className="fa fa-check-circle food-form-btn submit-btn"
-                aria-hidden="true"></i>
-            </div>
-            <div className="form-btn-wrapper center">
-              <i onClick={this.handleCancel()}
-                className="fa fa-times-circle food-form-btn cancel-btn"
-                aria-hidden="true"></i>
-            </div>
-            <button onClick={this.handleSubmit()} className="form-submit-btn"></button>
+            <button onClick={this.handleSubmit()} className="form-submit-btn">Add</button>
           </div>
         </form>
       );
     }
   }
-  // <button onClick={this.handleCancel()} className="cancel-btn">Cancel</button>
+
+  // Different button type. Commented out in case I want to switch back to it.
+  // <div className="form-btn-wrapper center">
+  //   <i onClick={this.handleSubmit()}
+  //     className="fa fa-check-circle food-form-btn submit-btn"
+  //     aria-hidden="true"></i>
+  // </div>
+  // <div className="form-btn-wrapper center">
+  //   <i onClick={this.handleCancel()}
+  //     className="fa fa-times-circle food-form-btn cancel-btn"
+  //     aria-hidden="true"></i>
+  // </div>
 
   renderFoodList() {
     const {type, list, currentDate} = this.props;

@@ -125,7 +125,7 @@ i.add-btn {
   /*color: #0083e9;*/
   margin-right: 10px;
   color: white;
-  padding-top: 3px;
+  padding-top: 2px;
   font-size: 25px;
   transition: 0.1s ease-in-out;
 }
@@ -145,7 +145,7 @@ i.add-btn:hover {
 .tracker-list-item {
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  background-color: rgba(0,0,0,0.02);
+  background-color: rgba(0,0,0,0.01);
   border-color: gray;
   box-sizing: border-box;
   padding: 10px;
@@ -159,12 +159,13 @@ i.add-btn:hover {
 }
 
 .new-food-form {
-  padding: 10px 0px 10px 20px;
+  padding: 10px 45px 8px 45px;
   display: flex;
   border-width: 0 1px 1px 1px;
   justify-content: space-between;
   border-style: solid;
   border-color: #666;
+  background-color: rgba(0,0,0,0.01);
 }
 
 .new-food-form input {
@@ -175,6 +176,7 @@ i.add-btn:hover {
   width: 150px;
   font-size: 16px;
   padding: 2px 0px;
+  background-color: transparent;
 }
 
 .new-food-form input:last-of-type {
@@ -224,15 +226,15 @@ i.add-btn:hover {
   margin: 0 20px;
 }
 
-.goal-submit-btn{
+.goal-submit-btn, .form-submit-btn{
   border: none;
   background-color: #006DC2;
   color: white;
   font-size: 14px;
-  padding: 4px 10px;
+  padding: 5px 15px;
 }
 
-.goal-submit-btn:hover{
+.goal-submit-btn:hover, .form-submit-btn:hover{
   cursor: pointer;
   background-color: #00579b;
 }
@@ -246,7 +248,7 @@ i.close-btn {
   font-size: 20px;
   transition: 0.1s ease-in-out;
   color: #c2000c;
-  padding-bottom: 1px;
+  padding-bottom: 4px;
 }
 
 i.close-btn:hover {
@@ -256,7 +258,6 @@ i.close-btn:hover {
 
 .food-form-btn-wrapper {
   height: 23px;
-  width: 65px;
   align-items: center;
   justify-content: space-between;
 }
@@ -286,7 +287,6 @@ i.food-form-btn:hover {
 }
 
 .form-submit-btn {
-  display: none;
 }
 
 .submit-btn {
