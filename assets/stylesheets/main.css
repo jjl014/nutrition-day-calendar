@@ -48,6 +48,7 @@ li {
 }
 
 .center {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -83,7 +84,7 @@ li {
 
 .date-header i:hover {
   cursor: pointer;
-  font-size: 55px;
+  font-size: 53px;
 }
 
 .meal-tracker {
@@ -113,7 +114,7 @@ i.add-btn {
   margin-right: 10px;
   color: white;
   font-size: 30px;
-  padding: 0 2.5px;
+  padding: 0 1.5px;
   transition: 0.1s ease-in-out;
 }
 
@@ -122,7 +123,7 @@ i.add-btn:hover {
   color: white;
   padding: 0;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 33px;
 }
 
 .tracker-list-item {
@@ -199,6 +200,24 @@ i.add-btn:hover {
 .goal-submit-btn:hover {
   cursor: pointer;
   background-color: #00579b;
+}
+
+.close-btn-wrapper {
+  width: 23px;
+  height: 23px;
+  padding-right: 1px;
+}
+
+i.close-btn {
+  font-size: 20px;
+  transition: 0.1s ease-in-out;
+  color: #006DC2;
+  padding-bottom: 1px;
+}
+
+i.close-btn:hover {
+  font-size: 23px;
+  cursor: pointer;
 }
 
 input[type='number'] {

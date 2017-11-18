@@ -8,7 +8,9 @@ const TrackerListItem = ({food, removeFood}) => {
         <h4>{food.food}</h4>
         <h4>{food.calories}</h4>
       </div>
-      <button onClick={removeFood} >Remove</button>
+      <div className="close-btn-wrapper center">
+        <i onClick={removeFood} className="fa fa-times close-btn" aria-hidden="true"></i>
+      </div>
     </li>
   );
 };
