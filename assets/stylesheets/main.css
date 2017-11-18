@@ -1,3 +1,29 @@
+h1, h2, h3, h4, p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  padding: 10px;
+}
+
+body {
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  color: #666;
+}
+
+input {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
 .h-box {
   display: flex;
   flex-direction: row;
@@ -10,9 +36,62 @@
 
 .day-calendar {
   align-items: center;
+  margin: 0 auto;
+  min-width: 400px;
+  max-width: 600px;
+  width: 90%;
 }
 
 .date-header {
-  width: 500px;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.date-header i {
+  color: #0083e9;
+}
+
+.date-header i:hover {
+  cursor: pointer;
+  color: #006DC2;
+}
+
+.meal-tracker {
+  width: 100%;
+}
+
+.tracker-list {
+}
+
+.section-header {
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #006DC2;
+}
+
+i.add-btn {
+  /*color: #0083e9;*/
+  margin-right: 10px;
+  color: white;
+  font-size: 30px;
+  padding: 0 2.5px;
+  transition: 0.1s ease-in-out;
+}
+
+i.add-btn:hover {
+  /*color: #006DC2;*/
+  color: white;
+  padding: 0;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.tracker-list-item {
+  border: solid 1px blue;
+}
+
+.new-food-form {
+  padding: 10px;
 }

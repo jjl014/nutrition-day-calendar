@@ -19,8 +19,14 @@ by: Jimmy Li
   calendar: {
     '11-17-2017': {
       breakfast: {
-        "chicken": 200,
-        "pizza": 100
+        "breakfast-1510965519405": {
+          food: "chicken",
+          calories: 200
+        },
+        "breakfast-1231235519405": {
+          food: "pizza",
+          calories: 100
+        }
       },
       lunch: {
         "salad": 200,

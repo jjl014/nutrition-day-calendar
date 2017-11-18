@@ -6,7 +6,6 @@ import MealTrackerContainer from './meal_tracker/meal_tracker_container';
 const NutritionDayCalendar = () => {
   return (
     <div className="day-calendar v-box">
-      <h1>Nutrition Day Calendar</h1>
       <DateHeaderContainer />
       <CalorieCounterContainer />
       <MealTrackerContainer />

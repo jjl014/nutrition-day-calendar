@@ -1,4 +1,5 @@
 import React from 'react';
+import TrackerListContainer from './tracker_list_container';
 
 export default class MealTracker extends React.Component {
   constructor(props) {
@@ -8,7 +9,11 @@ export default class MealTracker extends React.Component {
   render() {
     return (
       <div className="meal-tracker">
-        <h1>Meal Tracker</h1>
+        <TrackerListContainer type={"breakfast"} />
+        <TrackerListContainer type={"lunch"}/>
+        <TrackerListContainer type={"dinner"}/>
+        <TrackerListContainer type={"snacks"}/>
+        <TrackerListContainer type={"exercise"}/>
       </div>
     );
   }

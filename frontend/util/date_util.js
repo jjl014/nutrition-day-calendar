@@ -24,6 +24,7 @@ export const getPrettyDate = (dateStr) => {
 
 export const changeDate = (dateStr, delta) => {
   const date = new Date(dateStr);
+  // Go back or go forward one day depending on delta
   date.setDate(date.getDate() + delta);
   return `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`;
 };

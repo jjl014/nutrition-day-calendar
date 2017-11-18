@@ -26,13 +26,28 @@ export default class DateHeader extends React.Component {
     };
   }
 
+  displayDate() {
+    const {currentDate, todaysDate} = this.props;
+    const tomorrow = this.newDate(todaysDate, true);
+    const yesterday = this.newDate(todaysDate, false);
+    switch(currentDate) {
+      case tomorrow:
+        return "Tomorrow";
+      case yesterday:
+        return "Yesterday";
+      case todaysDate:
+        return "Today";
+      default:
+        return getPrettyDate(currentDate);
+    }
+  }
+
   render() {
-    const {currentDate} = this.props;
     return (
       <div className="date-header h-box">
-        <button onClick={this.handleNavigate("prev")}>Prev</button>
-        <h2>{getPrettyDate(currentDate)}</h2>
-        <button onClick={this.handleNavigate("next")}>Next</button>
+        <i onClick={this.handleNavigate("prev")} className="fa fa-3x fa-chevron-circle-left" aria-hidden="true"></i>
+        <h1>{this.displayDate()}</h1>
+        <i onClick={this.handleNavigate("next")} className="fa fa-3x fa-chevron-circle-right" aria-hidden="true"></i>
       </div>
     );
   }
