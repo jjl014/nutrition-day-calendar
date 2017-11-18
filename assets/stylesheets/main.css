@@ -163,24 +163,18 @@ i.add-btn:hover {
   border-color: #666;
 }
 
-.new-food-form input:first-of-type {
+.new-food-form input {
   text-align: center;
   border: none;
   border-bottom: solid 2px #006DC2;
   color: inherit;
   width: 150px;
   font-size: 16px;
-  padding: 0px 0px;
+  padding: 2px 0px;
 }
 
 .new-food-form input:last-of-type {
-  text-align: center;
-  border: none;
-  border-bottom: solid 2px #006DC2;
-  color: inherit;
   width: 130px;
-  font-size: 16px;
-  padding: 0px 0px;
 }
 
 .calorie-counter-wrapper {
@@ -303,6 +297,10 @@ i.food-form-btn:hover {
   width: 100%;
   padding-right: 4px;
   justify-content: space-between;
+}
+
+.date {
+  align-items: center;
 }
 
 input[type='number'] {

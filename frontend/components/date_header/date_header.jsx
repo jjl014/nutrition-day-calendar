@@ -32,13 +32,19 @@ export default class DateHeader extends React.Component {
     const yesterday = this.newDate(todaysDate, false);
     switch(currentDate) {
       case tomorrow:
-        return "Tomorrow";
+        return (
+          <div className="date v-box"><h1>{getPrettyDate(tomorrow)}</h1><p>Tomorrow</p></div>
+        );
       case yesterday:
-        return "Yesterday";
+        return (
+          <div className="date v-box"><h1>{getPrettyDate(yesterday)}</h1><p>Yesterday</p></div>
+        );
       case todaysDate:
-        return "Today";
+        return (
+          <div className="date v-box"><h1>{getPrettyDate(todaysDate)}</h1><p>Today</p></div>
+        );
       default:
-        return getPrettyDate(currentDate);
+        return <h1>{getPrettyDate(currentDate)}</h1>;
     }
   }
 
@@ -50,7 +56,7 @@ export default class DateHeader extends React.Component {
             className="fa fa-chevron-circle-left chevron"
             aria-hidden="true"></i>
         </div>
-        <h1>{this.displayDate()}</h1>
+        {this.displayDate()}
         <div className="date-header-btn">
           <i onClick={this.handleNavigate("next")}
             className="fa fa-chevron-circle-right chevron"
