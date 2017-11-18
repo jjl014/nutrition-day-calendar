@@ -2,13 +2,15 @@
 by: Jimmy Li
 
 ## Running the App
+Within the app directory, type in:
+
 * `npm install`
 * `npm start`
 
   or
 * `npm install`
 * `webpack -w`
-* then copy full path for index.html and paste into the browser or open index.html from the directory
+* `open index.html` or copy full path for index.html and paste into the browser or open index.html from the directory
 
 ## Challenge Overview
 * Displays a list of foods that the user has eaten in a clear way. Include the calorie count.
@@ -51,6 +53,8 @@ For the design of the app, I used Redux to keep track of a global state. Compone
 
 As for the new food form, I decided to use an inline form rather than a modal. The reason behind this is so that it doesn't affect the flow of the app. It also allows the user the interact with the rest of the app while making changes.
 
+I also restricted the input fields. The food field will only accept letters and the calories field will only accept numbers. No new item will be added unless both fields are filled out.
+
 For the color scheme of the app, I took some inspiration from MyFitnessPal's website and mobile app.
 
 Flexbox was used liberally to space things out and make the UI look intuitive and pretty.
@@ -64,3 +68,4 @@ One of the challenges I ran into was deciding how the overall state shape should
 ### Future Directions
 * Make use of a nutrition API to get additional nutrition info
 * Add calendar view to easily select a date
+* Add errors that will be displayed so users get a better idea of why they can't add a new food item.
