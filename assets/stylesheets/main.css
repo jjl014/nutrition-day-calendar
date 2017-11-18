@@ -48,17 +48,29 @@ li {
   align-items: center;
 }
 
+.date-header-btn {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .date-header i {
-  color: #0083e9;
+  color: #006DC2;
+  font-size: 50px;
+  transition: 0.1s ease-in-out;
 }
 
 .date-header i:hover {
   cursor: pointer;
-  color: #006DC2;
+  font-size: 55px;
 }
 
 .meal-tracker {
   width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
 .tracker-list {

@@ -45,9 +45,17 @@ export default class DateHeader extends React.Component {
   render() {
     return (
       <div className="date-header h-box">
-        <i onClick={this.handleNavigate("prev")} className="fa fa-3x fa-chevron-circle-left" aria-hidden="true"></i>
+        <div className="date-header-btn">
+          <i onClick={this.handleNavigate("prev")}
+            className="fa fa-chevron-circle-left chevron"
+            aria-hidden="true"></i>
+        </div>
         <h1>{this.displayDate()}</h1>
-        <i onClick={this.handleNavigate("next")} className="fa fa-3x fa-chevron-circle-right" aria-hidden="true"></i>
+        <div className="date-header-btn">
+          <i onClick={this.handleNavigate("next")}
+            className="fa fa-chevron-circle-right chevron"
+            aria-hidden="true"></i>
+        </div>
       </div>
     );
   }
