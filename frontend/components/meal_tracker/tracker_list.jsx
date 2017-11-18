@@ -49,6 +49,8 @@ export default class TrackerList extends React.Component {
         calories
       };
       this.props.addFood(newFood);
+      this.setState({food: "", calories: ""});
+      document.getElementById("food").focus();
     };
   }
 
@@ -62,21 +64,41 @@ export default class TrackerList extends React.Component {
       });
     };
   }
+  // <label htmlFor="food">{this.props.type === "exercise" ? "Exercise" : "Food"}</label>
+  // <label htmlFor="calories">Calories</label>
 
   renderFoodForm () {
     if (this.state.addNewItem) {
       return (
         <form className="new-food-form">
-          <label htmlFor="food">{this.props.type === "exercise" ? "Exercise" : "Food"}</label>
-          <input onChange={this.handleChange("food")} autoComplete="off" id="food" type="text"></input>
-          <label htmlFor="calories">Calories</label>
-          <input onChange={this.handleChange("calories")} autoComplete="off" id="calories" type="number"></input>
-          <button onClick={this.handleSubmit()}>Add</button>
-          <button onClick={this.handleCancel()}>Cancel</button>
+          <input
+            onChange={this.handleChange("food")}
+            autoComplete="off"
+            id="food"
+            placeholder={this.props.type === "exercise" ? "Exercise" : "Food"}
+            type="text"
+            value={this.state.food}></input>
+          <input
+            onChange={this.handleChange("calories")}
+            autoComplete="off"
+            id="calories"
+            placeholder={this.props.type === "exercise" ? "Calories Burned" : "Calories"}
+            type="number"
+            value={this.state.calories}></input>
+          <div className="food-form-btn-wrapper h-box">
+            <div className="form-btn-wrapper center">
+              <i onClick={this.handleSubmit()} className="fa fa-check-circle food-form-btn submit-btn" aria-hidden="true"></i>
+            </div>
+            <div className="form-btn-wrapper center">
+              <i onClick={this.handleCancel()} className="fa fa-times-circle food-form-btn cancel-btn" aria-hidden="true"></i>
+            </div>
+            <button onClick={this.handleSubmit()} className="form-submit-btn"></button>
+          </div>
         </form>
       );
     }
   }
+  // <button onClick={this.handleCancel()} className="cancel-btn">Cancel</button>
 
   renderFoodList() {
     const {type, list, currentDate} = this.props;

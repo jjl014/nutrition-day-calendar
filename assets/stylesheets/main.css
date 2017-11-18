@@ -10,14 +10,17 @@ h1 {
 h2 {
   font-size: 24px;
   padding: 10px;
+  font-weight: 400;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 400;
 }
 
 h4 {
   font-size: 18px;
+  font-weight: 400;
 }
 
 label {
@@ -82,13 +85,13 @@ li {
 
 .date-header i {
   color: #006DC2;
-  font-size: 50px;
+  font-size: 40px;
   transition: 0.1s ease-in-out;
 }
 
 .date-header i:hover {
   cursor: pointer;
-  font-size: 53px;
+  font-size: 43px;
 }
 
 .meal-tracker {
@@ -117,7 +120,7 @@ i.add-btn {
   /*color: #0083e9;*/
   margin-right: 10px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   padding: 0 1.5px;
   transition: 0.1s ease-in-out;
 }
@@ -127,7 +130,7 @@ i.add-btn:hover {
   color: white;
   padding: 0;
   cursor: pointer;
-  font-size: 33px;
+  font-size: 28px;
 }
 
 .tracker-list-item {
@@ -147,12 +150,32 @@ i.add-btn:hover {
 }
 
 .new-food-form {
-  padding: 10px;
+  padding: 10px 0px 10px 20px;
   display: flex;
   border-width: 0 1px 1px 1px;
   justify-content: space-between;
   border-style: solid;
   border-color: #666;
+}
+
+.new-food-form input:first-of-type {
+  text-align: center;
+  border: none;
+  border-bottom: solid 2px #006DC2;
+  color: inherit;
+  width: 150px;
+  font-size: 16px;
+  padding: 0px 0px;
+}
+
+.new-food-form input:last-of-type {
+  text-align: center;
+  border: none;
+  border-bottom: solid 2px #006DC2;
+  color: inherit;
+  width: 130px;
+  font-size: 16px;
+  padding: 0px 0px;
 }
 
 .calorie-counter-wrapper {
@@ -172,7 +195,7 @@ i.add-btn:hover {
 }
 
 .remaining h3 {
-  color: #64b500;
+  color: #00c255;
 }
 
 .goal-calorie-form-wrapper {
@@ -194,11 +217,11 @@ i.add-btn:hover {
   color: inherit;
   width: 80px;
   font-size: 16px;
-  padding: 3px 0;
+  padding: 2px 0;
   margin: 0 20px;
 }
 
-.goal-submit-btn {
+.goal-submit-btn{
   border: none;
   background-color: #006DC2;
   color: white;
@@ -206,7 +229,7 @@ i.add-btn:hover {
   padding: 4px 10px;
 }
 
-.goal-submit-btn:hover {
+.goal-submit-btn:hover{
   cursor: pointer;
   background-color: #00579b;
 }
@@ -214,19 +237,61 @@ i.add-btn:hover {
 .close-btn-wrapper {
   width: 23px;
   height: 23px;
-  padding-right: 2px;
 }
 
 i.close-btn {
   font-size: 20px;
   transition: 0.1s ease-in-out;
-  color: #006DC2;
+  color: #c2000c;
   padding-bottom: 1px;
 }
 
 i.close-btn:hover {
   font-size: 23px;
   cursor: pointer;
+}
+
+.food-form-btn-wrapper {
+  height: 23px;
+  width: 65px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-btn-wrapper {
+  height: 23px;
+  width: 23px;
+}
+
+.form-btn-wrapper:last-of-type {
+  margin-right: 7px;
+}
+
+i.food-form-btn {
+  font-size: 20px;
+  transition: 0.1s ease-in-out;
+  margin-right: 10px;
+}
+
+i.food-form-btn:last-of-type {
+  margin-right: 4px;
+}
+
+i.food-form-btn:hover {
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.form-submit-btn {
+  display: none;
+}
+
+.submit-btn {
+  color: #00c255;
+}
+
+.cancel-btn {
+  color: #c2000c;
 }
 
 input[type='number'] {
@@ -237,4 +302,17 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #c8c8c8;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #c8c8c8;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #c8c8c8;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #c8c8c8;
 }
